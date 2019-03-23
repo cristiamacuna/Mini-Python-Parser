@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <script src="bootstrap/js/bootstrap.js"></script>    
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="lib/codemirror.js"></script>
+    <link rel="stylesheet" href="lib/codemirror.css">
+    
+    <script src="mode/python/python.js"></script>
+<title>Parser</title>
+</head>
+<body>
+    <div class="head-bar">
+        <h2>Parser</h2>
+    </div>
+   <div class="main-container">
+
+        <div class="file-menu col-md-2">
+           
+                <b>Archivos</b> 
+                
+                 <a style="float:right;margin:3px;"data-toggle="modal" data-target="#filemodal"><i class="material-icons" >
+                        cloud_upload
+                        </i></a> 
+           
+            <ul id="fileList">
+                
+            </ul>
+                    
+        </div>
+       <div class="codeeditor col-md-5" id="codeeditor">
+       </div>
+       <div class="console col-md-5">
+            Python
+            <br>>
+       </div>
+   </div>
+    
+</body>
+<footer>
+    <div class="footer">
+        TEC
+    </div>
+</footer>
+
+
+<!--Modals-->
+<div class="modal" id="filemodal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Subir archivo</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                    <input type="file" name="files[]" id="files" multiple 
+                    accept=".txt">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+<script src="js/code.js"></script>
+<script src="js/FileRead.js"></script>
+</html>
