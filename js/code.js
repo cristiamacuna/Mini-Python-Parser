@@ -1,3 +1,5 @@
+var antlr4 = require('antlr4/index.js');
+
 var editor =CodeMirror(document.getElementById("codeeditor"),{
   value: "#El código del archivo va aquí",
   mode:  "python",
