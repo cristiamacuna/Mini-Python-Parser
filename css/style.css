@@ -1,3 +1,10 @@
+.messages{
+background-color: black;
+color: greenyellow;
+border: none;
+resize: none;
+box-sizing:border-box;
+}
 .head-bar{
     height: 75px;
     background-color:#ECECEC; 

@@ -14,13 +14,13 @@
     <script src="lib/require.js"></script>
     <script src="lib/codemirror.js"></script>
     <link rel="stylesheet" href="lib/codemirror.css">
-    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <script src="mode/python/python.js"></script>
 <title>Parser</title>
 </head>
 <body>
     <div class="head-bar">
-        <button id ="parse" class="btn btn-success">PARSE</button>
+        <button id ="parse" class="btn btn-success"><i class="fas fa-play"></i></button>
     </div>
    <div class="main-container">
 
@@ -37,14 +37,14 @@
             </ul>
                     
         </div>
-       <div class="codeeditor col-md-5" id="codeeditor"></div>
+        <div class="row">
+       <div class="codeeditor col-md-7" id="codeeditor"></div>
        <div class="console col-md-5">
-            Python
-            <br>>
-            <textarea name="messages" id="messages" cols="30" rows="10">
-              
-            </textarea>
+            Mini-Python<br> <br>
+            <textarea class="messages" name="messages" id="messages" cols="45"></textarea>
        </div>
+      </div>
+    </div>
    </div>
     
 </body>
@@ -101,11 +101,12 @@
         if (errors.length != 0)
         {
             errors.forEach(function(element) {
-                document.getElementById("messages").value += (element + '\n');
+              
+                document.getElementById("messages").value += ("Ups ha ocurrido un error " + "Info: "+element + '\n');
             });
         }
         else {
-            document.getElementById("messages").value = 'Compilación Exitosa!!!\n\n';
+            document.getElementById("messages").value = '> Compilación exitosa\n\n';
             //impresión del árbol
         }
 

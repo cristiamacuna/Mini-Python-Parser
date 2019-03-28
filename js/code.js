@@ -1,7 +1,8 @@
 var antlr4 = require('antlr4/index.js');
 
 var editor =CodeMirror(document.getElementById("codeeditor"),{
-  value: "#El código del archivo va aquí",
+    value: "#Suba un archivo con código mini-python, o escriba su código aquí",
+
   mode:  "python",
   lineNumbers: true
 });
@@ -32,10 +33,5 @@ function readFiles(event){
  document.getElementById('files').addEventListener('change', readFiles, false);
 
 
- function getFileName(){
 
- }
 
- //Hacer domingo:
- //Sacar los filenames de los multiples archivos (o solo 1)
- //Poner en el explorador
