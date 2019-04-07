@@ -14,7 +14,7 @@ argList : IDENTIFIER*;
 moreArgs : (COMA IDENTIFIER)*;
 ifStatement : IF expression DOSPUN sequence ELSE DOSPUN sequence ;
 whileStatement : WHILE expression DOSPUN sequence ;
-forStatement : FOR expression IF expressionList DOSPUN sequence ;
+forStatement : FOR expression IN expressionList DOSPUN sequence ;
 returnStatement : RETURN expression NEWLINE ;
 printStatement : PRINT expression NEWLINE ;
 assignStatement : IDENTIFIER ASSIGN expression NEWLINE ;

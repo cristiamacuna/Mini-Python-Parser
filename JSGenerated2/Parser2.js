@@ -85,7 +85,7 @@ var serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964",
     "\u000f\u0003\u0002\u0002\u0002no\u0007\t\u0002\u0002op\u0005\"\u0012",
     "\u0002pq\u0007\u0019\u0002\u0002qr\u0005\u001e\u0010\u0002r\u0011\u0003",
     "\u0002\u0002\u0002st\u0007\u0006\u0002\u0002tu\u0005\"\u0012\u0002u",
-    "v\u0007\u0005\u0002\u0002vw\u00054\u001b\u0002wx\u0007\u0019\u0002\u0002",
+    "v\u0007\u0007\u0002\u0002vw\u00054\u001b\u0002wx\u0007\u0019\u0002\u0002",
     "xy\u0005\u001e\u0010\u0002y\u0013\u0003\u0002\u0002\u0002z{\u0007\n",
     "\u0002\u0002{|\u0005\"\u0012\u0002|}\u0007\u000b\u0002\u0002}\u0015",
     "\u0003\u0002\u0002\u0002~\u007f\u0007\f\u0002\u0002\u007f\u0080\u0005",
@@ -1030,8 +1030,8 @@ ForStatementContext.prototype.expression = function() {
     return this.getTypedRuleContext(ExpressionContext,0);
 };
 
-ForStatementContext.prototype.IF = function() {
-    return this.getToken(Parser2.IF, 0);
+ForStatementContext.prototype.IN = function() {
+    return this.getToken(Parser2.IN, 0);
 };
 
 ForStatementContext.prototype.expressionList = function() {
@@ -1074,7 +1074,7 @@ Parser2.prototype.forStatement = function() {
         this.state = 114;
         this.expression();
         this.state = 115;
-        this.match(Parser2.IF);
+        this.match(Parser2.IN);
         this.state = 116;
         this.expressionList();
         this.state = 117;

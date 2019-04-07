@@ -4,11 +4,13 @@ color: greenyellow;
 border: none;
 resize: none;
 box-sizing:border-box;
+height: 300px;
 }
 .head-bar{
     height: 75px;
     background-color:#ECECEC; 
     padding:20px;
+    position: relative;
 }
 .file-menu{
     float: left;

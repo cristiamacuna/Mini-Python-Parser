@@ -32,8 +32,6 @@ PRINT   : 'print';
 ASSIGN  : '=';
 INDENT : '{';
 DEDENT : '}';
-
-
 COMA      : ',';
 COMP      : '==';
 PIZQ      : '(';
@@ -60,10 +58,10 @@ IDENTIFIER : L(L|N)*;
 STRING : '"' ('""'|~'"')* '"' ;
 
 //elementos omitidos
-COMMENT:   '//'.*?'\r'?'\n' -> skip ;
+COMMENT:   '#'.*?'\r'?'\n' -> skip ;
 
 COMENTARIO
- : '/*'( COMENTARIO | . )*?'*/' -> skip
+ : '"""'( COMENTARIO | . )*?'"""' -> skip
  ;
 
 WS : [ +\r\n\t] -> skip ;
