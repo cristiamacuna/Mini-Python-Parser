@@ -1,3 +1,3 @@
 Web based mini-python
 
-<a href="https://cristiamacuna-minipython2.azurewebsites.net/">Demo</a> 
+<a href="https://cristiamacuna.github.io/Mini-Python-Parser/">Demo</a> 
