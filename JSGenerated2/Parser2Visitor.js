@@ -150,12 +150,6 @@ Parser2Visitor.prototype.visitSequenceAST = function(ctx) {
 };
 
 
-// Visit a parse tree produced by Parser2#MoreStatementsAST.
-Parser2Visitor.prototype.visitMoreStatementsAST = function(ctx) {
-  return this.visitChildren(ctx);
-};
-
-
 // Visit a parse tree produced by Parser2#ExpressionAST.
 Parser2Visitor.prototype.visitExpressionAST = function(ctx) {
   return this.visitChildren(ctx);
@@ -210,14 +204,14 @@ Parser2Visitor.prototype.visitFunctionCallExpressionAST = function(ctx) {
 };
 
 
-// Visit a parse tree produced by Parser2#ExpressionList_expressionAST.
-Parser2Visitor.prototype.visitExpressionList_expressionAST = function(ctx) {
+// Visit a parse tree produced by Parser2#ExpressionListAST.
+Parser2Visitor.prototype.visitExpressionListAST = function(ctx) {
   return this.visitChildren(ctx);
 };
 
 
-// Visit a parse tree produced by Parser2#ExpressionList_moreExpressionsAST.
-Parser2Visitor.prototype.visitExpressionList_moreExpressionsAST = function(ctx) {
+// Visit a parse tree produced by Parser2#ExpressionListEPSILONAST.
+Parser2Visitor.prototype.visitExpressionListEPSILONAST = function(ctx) {
   return this.visitChildren(ctx);
 };
 

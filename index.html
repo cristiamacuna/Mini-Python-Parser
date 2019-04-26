@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
     rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -16,7 +15,8 @@
     <link rel="stylesheet" href="lib/codemirror.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <script src="mode/python/python.js"></script>
-<title>Parser Cristiam</title>
+    
+<title>Mini Python</title>
 </head>
 <body>
     <div class="head-bar">
@@ -46,7 +46,8 @@
             <span style="font-size:12px"> <a href="https://github.com/cristiamacuna/Mini-Python-Parser">Github</a></span>
             
             <br>
-           <textarea class="messages" name="messages" id="messages" cols="45"></textarea>
+           <textarea class="messages" name="messages" id="messages" cols="45" ></textarea>
+         
        </div>
       </div>
     </div>
@@ -58,8 +59,8 @@
   var antlr4 = require('antlr4/index.js');
   var JSscanner = require('JSGenerated2/Scanner2');
   var JSparser = require('JSGenerated2/Parser2');
-
-
+  var MiVisitor = require('./JSGenerated2/MiVisitor').MiVisitor;
+  
   var tree = null;
 
   var ErrorListener = function(errors) {
@@ -83,7 +84,7 @@
         var input = editor.getValue();
         var chars = new antlr4.InputStream(input);
         var lexer = new JSscanner.Scanner2(chars);
-
+        
 
         var tokens = new antlr4.CommonTokenStream(lexer);
         var parser = new JSparser.Parser2(tokens);
@@ -101,8 +102,10 @@
         parser.addErrorListener(listener);
 
         tree = parser.program();
-
-        document.getElementById("messages").value='';
+        var mv = new MiVisitor();
+        
+        
+        //document.getElementById("messages").value='';
         if (errors.length != 0)
         {
             errors.forEach(function(element) {
@@ -111,10 +114,10 @@
             });
         }
         else {
-            document.getElementById("messages").value = '> Compilación exitosa\n\n';
+            document.getElementById("messages").value = '> Sintaxis Correcta\n\n';
            
         }
-
+        mv.visit(tree);
     });
 
 
@@ -153,5 +156,4 @@
         </div>
       </div>
 <script src="js/code.js"></script>
-
 </html>

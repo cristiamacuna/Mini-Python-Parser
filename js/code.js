@@ -1,5 +1,6 @@
 var antlr4 = require('antlr4/index.js');
 
+
 var editor =CodeMirror(document.getElementById("codeeditor"),{
     value: "#Suba un archivo con código mini-python, o escriba su código aquí",
 
@@ -31,6 +32,12 @@ function readFiles(event){
      }
  }
  document.getElementById('files').addEventListener('change', readFiles, false);
+
+ function print(){
+     alert("a");
+ }
+
+
 
 
 
